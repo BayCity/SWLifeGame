@@ -24,7 +24,6 @@ public class CellMatrix {
             for (int j = 0; j < heigh; j++) {
                 tempMatrix[i][j]=0;
                 int num=AroundCellNumbers(i,j);
-                System.out.println(num);
                 if (num == 3) {
                     tempMatrix[i][j] = 1;
                 }

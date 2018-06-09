@@ -32,6 +32,7 @@ public class controller implements Runnable {
     @Override
     public void run() {
         while (true) {
+            System.out.println(gameFrame.getstatus());
             cellMatrix.LifeRule();
             gameFrame.loadCell();
             try {
