@@ -81,8 +81,8 @@ public class CellMatrix {
         return cell;
     }
 
-    public void setCell(int[][] cell) {
-        this.cell = cell;
+    public void setCell(int x,int y,int value) {
+        this.cell[x][y]=value;
     }
 
     public double getRate() {
