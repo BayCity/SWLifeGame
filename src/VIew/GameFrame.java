@@ -4,11 +4,19 @@ import Model.CellMatrix;
 
 import javax.swing.*;
 import java.awt.*;
+import java.security.PrivateKey;
 
 public class GameFrame extends JFrame {
     private JTextField[][] celltext;
     private JPanel panel;
     private CellMatrix cellMatrix;
+    private JButton start=new JButton("Start");
+    private JButton pause=new JButton("pause");
+    private JLabel weigth=new JLabel("长度");
+    private JLabel height=new JLabel("宽度");
+    private JLabel rate=new JLabel("时间间隔");
+    private JPanel controlpanel=new JPanel();
+
 
     public GameFrame(CellMatrix cellMatrix) {
         setTitle("Life Game");
@@ -18,7 +26,10 @@ public class GameFrame extends JFrame {
         this.cellMatrix = cellMatrix;
         this.setVisible(true);
         add("Center", panel);
-        panel.updateUI();
+        controlpanel=new JPanel();
+        controlpanel.setLayout(new FlowLayout());
+        add(LEFT_ALIGNMENT,controlpanel);
+
     }
 
     public void start() {
@@ -30,6 +41,8 @@ public class GameFrame extends JFrame {
         for (int y = 0; y < rows; y++) {
             for (int x = 0; x < cols; x++) {
                 JTextField text = new JTextField();
+                text.setEditable(false);
+                text.setBorder(BorderFactory.createRaisedBevelBorder());
                 celltext[y][x] = text;
                 panel.add(text);
             }
