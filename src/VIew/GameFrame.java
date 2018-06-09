@@ -10,14 +10,15 @@ public class GameFrame extends JFrame {
     private JPanel panel;
     private CellMatrix cellMatrix;
 
-
     public GameFrame(CellMatrix cellMatrix) {
         setTitle("Life Game");
         this.setSize(1000, 1200);
-        this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         start();
         this.cellMatrix = cellMatrix;
+        this.setVisible(true);
+        add("Center", panel);
+        panel.updateUI();
     }
 
     public void start() {
@@ -33,7 +34,6 @@ public class GameFrame extends JFrame {
                 panel.add(text);
             }
         }
-        add("Center", panel);
     }
 
     public void loadCell() {
@@ -46,5 +46,6 @@ public class GameFrame extends JFrame {
                 }
             }
         }
+        panel.updateUI();
     }
 }
